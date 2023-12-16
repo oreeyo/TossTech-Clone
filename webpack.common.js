@@ -1,8 +1,12 @@
+const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 // 모듈시스템에서 CommonJS 스타일을 사용해서 설정 정보를 내보냄.
 module.exports = {
   // entry는 웹팩이 번들링을 시작할 진입점 (entry point) 을 정의한다.
   // ../src/app.js 파일을 진입점으로 설정해서, 응용 프로그램의 시작점을 정의한다.
-  entry: '../src/app.js',
+  entry: './src/app.js',
   // output은 번들링된 파일에 대한 설정을 정의한다.
   // filename은 번들링된 결과물의 파일명을 설정한다.
   // 번들링된 자바스크립트 파일은 'bundle.js' 로 생성된다.
