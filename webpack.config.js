@@ -24,8 +24,18 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.css$/,
-				use: ['style-loader', 'css-loader']
+				test: /\.js$/, // JS 파일에 대한 로더 설정
+				exclude: /node_modules/, // node_modules 디렉토리는 제외
+				use: {
+					loader: 'babel-loader', // babel-loader 사용
+					options: {
+						presets: ['@babel/preset-env'] // 바벨 프리셋 설정
+					}
+				}
+			},
+			{
+				test: /\.css$/, // CSS 파일에 대한 로더 설정
+				use: ['style-loader', 'css-loader'] // style-loader와 css-loader 사용
 			}
 		]
 	}
