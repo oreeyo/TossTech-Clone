@@ -12,7 +12,10 @@ module.exports = {
 	mode: 'development',
 	plugins: [
 		new CleanWebpackPlugin(), // 빌드 이전에 이전 빌드 결과물들을 clean 해주는 플러그인
-		new HtmlWebpackPlugin() // HTML 파일을 생성하고 번들링된 자원에 대한 링크를 자동으로 추가해주는 플러그인
+		new HtmlWebpackPlugin({
+			template: './index.html', // 사용할 HTML 템플릿 파일 경로
+			filename: 'index.html' // 생성될 HTML 파일의 이름
+		}) // HTML 파일을 생성하고 번들링된 자원에 대한 링크를 자동으로 추가해주는 플러그인
 	],
 	devServer: {
 		devMiddleware: { publicPath: '/' }, //브라우저를 통해 접근하는 경로. 기본값은 '/' 이다.
@@ -36,6 +39,18 @@ module.exports = {
 			{
 				test: /\.css$/, // CSS 파일에 대한 로더 설정
 				use: ['style-loader', 'css-loader'] // style-loader와 css-loader 사용
+			},
+			{
+				test: /\.(png|jpe?g|gif)$/i,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							outputPath: './public/images', // 이미지가 저장될 경로 설정
+							publicPath: './public/images' // 웹에서 접근하는 경로 설정
+						}
+					}
+				]
 			}
 		]
 	}
