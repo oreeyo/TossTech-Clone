@@ -1,20 +1,11 @@
 {
   "devDependencies": {
-    "@babel/cli": "^7.23.4",
-    "@babel/core": "^7.23.6",
-    "@babel/preset-env": "^7.23.6",
-    "clean-webpack-plugin": "^4.0.0",
-    "css-loader": "^6.8.1",
     "eslint": "^8.55.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.0.1",
-    "html-webpack-plugin": "^5.6.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
     "prettier": "^3.1.0",
-    "style-loader": "^3.3.3",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1",
     "webpack-merge": "^5.10.0"
   },
   "name": "toss-tech-blog",
@@ -159,12 +150,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --fix --cache .",
     "format": "prettier --write --cache .",
-    "start": "webpack --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "start": "webpack --config webpack-config/webpack.dev.js",
+    "build": "webpack --config webpack-config/webpack.prod.js",
     "prepare": "husky install",
-    "lint-staged": "lint-staged",
-    "dev": "webpack serve --open --mode=development --hot",
-    "watch": "webpack --watch"
+    "lint-staged": "lint-staged"
   },
   "keywords": [],
   "author": "",
