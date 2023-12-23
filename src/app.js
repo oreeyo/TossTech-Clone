@@ -1,5 +1,6 @@
 import { html } from './utils'
 import logoImage from '../public/images/logo-image.png'
+import { createRouter } from './router'
 
 const app = document.getElementById('root')
 app.innerHTML = html`
