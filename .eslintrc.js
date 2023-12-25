@@ -77,7 +77,7 @@ module.exports = {
     특히 JSX, TypeScript 등과 같은 확장된 문법을 사용하는 프로젝트에서 많이 사용된다. 
     @babel/parser"는 이러한 환경에서 ESLint를 사용할 때 Babel의 파싱 능력을 이용하여 코드를 분석하고 검사하는 데 사용된다.
     */
-	parser: '@babel/parser',
+	parser: '@babel/eslint-parser',
 	parserOptions: {
 		ecmaVersion: 'latest', // 사용할 ECMAScript 버전을 설정 (최신으로 해놓음)
 		sourceType: 'module' // sourceType: parser의 export 형태를 설정
