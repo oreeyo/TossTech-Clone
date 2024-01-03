@@ -1,0 +1,54 @@
+header {
+	background-color: #fff;
+	padding: 10px 0;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+	padding: 0 20px;
+	max-width: 1200px;
+}
+
+.logo img {
+	height: 40px;
+}
+
+.logo span {
+	color: #0077ff;
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+.navigation a {
+	color: #333;
+	text-decoration: none;
+	margin: 0 10px;
+	font-size: 1rem;
+}
+
+.navigation a:last-child {
+	background-color: #0077ff;
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 20px;
+}
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+	.container {
+		flex-direction: column;
+	}
+
+	.navigation a {
+		margin: 5px 0;
+	}
+
+	.navigation a:last-child {
+		margin-top: 10px;
+	}
+}
