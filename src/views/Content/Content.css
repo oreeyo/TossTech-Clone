@@ -1,0 +1,29 @@
+.article {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+	background-color: #f2f2f2;
+	padding: 1rem;
+}
+
+.article img {
+	width: 100px;
+	margin-right: 1rem;
+}
+
+.article-info {
+	flex-grow: 1;
+}
+
+.article-info h2 {
+	margin: 0;
+	color: #333;
+}
+
+.article-info p {
+	color: #666;
+}
+
+.article-info date {
+	color: #999;
+}
