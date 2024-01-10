@@ -2,39 +2,39 @@
     display: flex;
     flex-direction: column;
 	align-items: center;
-    gap: 15px; /* 조금 더 좁은 간격으로 조정 */
+    gap: 15px; 
 }
 
 .article {
     border: 1px solid #e0e0e0;
-    padding: 12px; /* 패딩 줄임 */
-    border-radius: 6px; /* 둥근 모서리 반경을 약간 줄임 */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 크기 조정 */
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .article-image {
     width: 20%;
     height: auto;
-    border-radius: 4px; /* 이미지의 둥근 모서리 반경 유지 */
+    border-radius: 4px;
 }
 
 .article-details {
-    margin-top: 6px; /* 상단 여백 줄임 */
+    margin-top: 6px;
 }
 
 .article-title {
-    font-size: 1.2rem; /* 제목 글꼴 크기 줄임 */
+    font-size: 1.2rem;
     color: #333;
-    margin: 6px 0 2px; /* 제목의 마진 조정 */
+    margin: 6px 0 2px;
 }
 
 .article-date {
-    font-size: 0.8rem; /* 날짜 글꼴 크기 줄임 */
+    font-size: 0.8rem;
     color: #666;
-    margin-bottom: 2px; /* 날짜의 마진 줄임 */
+    margin-bottom: 2px;
 }
 
 .article-summary {
-    font-size: 0.9rem; /* 요약 글꼴 크기 줄임 */
+    font-size: 0.9rem;
     color: #444;
 }
