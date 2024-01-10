@@ -9,6 +9,8 @@ export class ContentController {
 
 	// 페이지가 로드될 때 실행할 메소드
 	init() {
-		this.view.renderContent()
+		this.model.loadArticles().then(articles => {
+			this.view.renderContent(articles)
+		})
 	}
 }
