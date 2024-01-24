@@ -1,5 +1,5 @@
 import './Content.css'
-import ContentModel from '../../models/ContentModel.js';
+import ContentModel from '../../models/ContentModel.js'
 import { router } from '../../helpers/router.js'
 
 class ContentView {
@@ -9,11 +9,13 @@ class ContentView {
 	}
 
 	renderContent() {
-		this.model.loadArticles()
-		.then(data => {
-		  const articlesArray = Object.values(data.articles);
-		  const contentHtml = articlesArray.map(article => {
-			return `
+		this.model
+			.loadArticles()
+			.then(data => {
+				const articlesArray = Object.values(data.articles)
+				const contentHtml = articlesArray
+					.map(article => {
+						return `
 			<div id="content-area">
 			  <div class="article" data-id="${article.id}">
 				<img src="${article.thumbnail_image}" alt="${article.title}" class="article-image">
@@ -24,28 +26,27 @@ class ContentView {
 				</div>
 			  </div>
 			</div>
-			`;
-		  }).join('');
-		  this.contentEl.innerHTML = contentHtml;
+			`
+					})
+					.join('')
+				this.contentEl.innerHTML = contentHtml
 
-		 	 // 각 기사에 클릭 이벤트 리스너 추가
-			this.contentEl.querySelectorAll('.article').forEach(articleEl => {
-				articleEl.addEventListener('click', () => {
-					const id = articleEl.getAttribute('data-id');
-					// URL을 변경하고 라우터 함수를 호출하여 상세 페이지 로딩
-					window.history.pushState({}, '', `/article/${id}`);
-					router();
-				});
-			});
-		})
-		.catch(error => console.error('Error fetching articles:', error));
+				// 각 기사에 클릭 이벤트 리스너 추가
+				this.contentEl.querySelectorAll('.article').forEach(articleEl => {
+					articleEl.addEventListener('click', () => {
+						const id = articleEl.getAttribute('data-id')
+						// URL을 변경하고 라우터 함수를 호출하여 상세 페이지 로딩
+						window.history.pushState({}, '', `/article/${id}`)
+						router()
+					})
+				})
+			})
+			.catch(error => console.error('Error fetching articles:', error))
 	}
 
-	
-
 	formatDate(dateString) {
-		const [year, month, day] = dateString.match(/(\d{4})(\d{2})(\d{2})/).slice(1);
-		return `${year}-${month}-${day}`;
-	  }
+		const [year, month, day] = dateString.match(/(\d{4})(\d{2})(\d{2})/).slice(1)
+		return `${year}-${month}-${day}`
+	}
 }
 export default ContentView
