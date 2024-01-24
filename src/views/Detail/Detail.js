@@ -1,7 +1,7 @@
-import "./Detail.css";
+import './Detail.css'
 
-const contentTemplate = (createdDate, detailContent, image, title) => ` 
-<main>
+export const contentTemplate = (createdDate, title, image, detailContent) => ` 
+<main id="main">
   <div id="detail_container">
     <div id="detail_inner_container">
       <div id="detail_img_container">
@@ -21,22 +21,19 @@ const contentTemplate = (createdDate, detailContent, image, title) => `
     </div>
   </div>
 </main>
-`;
+`
 
 const contentComponet = articleItem => {
-  const {
-    created_date: createdDate,
-    detailContent,
-    thumbnail_image: image,
-    title,
-  } = articleItem;
-  const main = document.getElementById("main");
-  main.innerHTML = contentTemplate(createdDate, detailContent, image, title);
-};
-
-const formatDate = (dateString) => {
-    const [year, month, day] = dateString.match(/(\d{4})(\d{2})(\d{2})/).slice(1);
-    return `${year}-${month}-${day}`;
+	console.log(createdDate)
+	const { created_date: createdDate, detailContent, thumbnail_image: image, title } = articleItem
+	const main = document.getElementById('main')
+	main.innerHTML = contentTemplate(createdDate, detailContent, image, title)
 }
 
-export default contentComponet;
+export const formatDate = dateString => {
+	const [year, month, day] = dateString.createdDate.match(/(\d{4})(\d{2})(\d{2})/).slice(1)
+	console.log(`${year}-${month}-${day}`)
+	return `${year}-${month}-${day}`
+}
+
+export default contentComponet

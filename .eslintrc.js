@@ -105,5 +105,8 @@ module.exports = {
 				caseSensitive: false
 			}
 		]
-	}
+	},
+	plugins: [
+		'import'
+	]
 }
