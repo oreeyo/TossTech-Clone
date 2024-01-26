@@ -11,9 +11,9 @@ export function renderHeader() {
             </a>
         </div>
         <nav class="navigation">
-            <a href="/digital">디지털</a>
-            <a href="/business">개발</a>
-            <a href="/news">채용 바로가기</a>
+            <a href="/design">디자인</a>
+            <a href="/">개발</a>
+            <a href="https://toss.im/career/jobs">채용 바로가기</a>
         </nav>
     </div>
 </header>
