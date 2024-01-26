@@ -1,40 +1,52 @@
 #content-area {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 	align-items: center;
-    gap: 15px; 
+	gap: 15px;
 }
 
 .article {
-    border: 1px solid #e0e0e0;
-    padding: 12px;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	border: 1px solid #e0e0e0;
+	width: 60%;
+	padding: 12px;
+	border-radius: 6px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+}
+
+.article:hover {
+	/* Define your hover styles here */
+	transform: scale(1.05); /* Example: scale up the article card */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Example: add shadow to lift the card */
+}
+.article:hover .article-title {
+	color: #1b64da;
 }
 
 .article-image {
-    width: 20%;
-    height: auto;
-    border-radius: 4px;
+	width: 20%;
+	height: auto;
+	border-radius: 4px;
 }
 
 .article-details {
-    margin-top: 6px;
+	margin-top: 6px;
 }
 
 .article-title {
-    font-size: 1.2rem;
-    color: #333;
-    margin: 6px 0 2px;
+	font-size: 1.2rem;
+	color: #333;
+	margin: 6px 0 2px;
 }
 
 .article-date {
-    font-size: 0.8rem;
-    color: #666;
-    margin-bottom: 2px;
+	font-size: 0.8rem;
+	color: #666;
+	margin-bottom: 2px;
 }
 
 .article-summary {
-    font-size: 0.9rem;
-    color: #444;
+	font-size: 0.9rem;
+	color: #444;
 }
