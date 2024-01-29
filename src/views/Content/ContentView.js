@@ -11,25 +11,22 @@ class ContentView {
       .map(article => {
         return `
 			<div id="content-area">
-			  <div class="article" data-id="${article.id}">
-				<img src="${article.thumbnail_image}" alt="${article.title}" class="article-image">
-				<div class="article-details">
-				  <h2 class="article-title">${article.title}</h2>
-				  <p class="article-date">${this.formatDate(article.created_date)}</p>
-				  <p class="article-summary">${article.summary}</p>
-				</div>
-			  </div>
+        <div class="article" data-id="${article.id}">
+          <img src="${article.thumbnail_image}" alt="${article.title}" class="article-image">
+          <div class="article-details">
+            <span class="article-title">${article.title}</span>
+            <span class="article-summary">${article.summary}</span>
+            <span class="article-date">${this.formatDate(article.created_date)}</span>
+          </div>
+        </div>
 			</div>
 			`
       })
       .join('')
     this.contentEl.innerHTML = contentHtml
-
-    // 각 기사에 클릭 이벤트 리스너 추가
     this.contentEl.querySelectorAll('.article').forEach(articleEl => {
       articleEl.addEventListener('click', () => {
         const id = articleEl.getAttribute('data-id')
-        // URL을 변경하고 라우터 함수를 호출하여 상세 페이지 로딩
         window.history.pushState({}, '', `/article/${id}`)
         router()
       })
