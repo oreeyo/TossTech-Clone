@@ -1,52 +1,83 @@
 #content-area {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .article {
-	cursor: pointer;
-	border: 1px solid #e0e0e0;
-	width: 60%;
-	padding: 12px;
-	border-radius: 6px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	transition: all 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  cursor: pointer;
+  width: 36%;
+  max-width: 50%;
+  -webkit-box-align: center;
+  margin-top: 80px;
+  box-sizing: border-box;
 }
 
-.article:hover {
-	/* Define your hover styles here */
-	transform: scale(1.05); /* Example: scale up the article card */
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Example: add shadow to lift the card */
-}
 .article:hover .article-title {
-	color: #1b64da;
+  color: #1b64da;
 }
 
 .article-image {
-	width: 20%;
-	height: auto;
-	border-radius: 4px;
+  width: 260px;
+  height: 260px;
+  border-radius: 20px;
+  margin: 0px 48px 0px 0px;
+  transition: all 0.4s ease;
+  object-fit: cover;
+}
+
+.article:hover .article-image {
+  transform: translateY(-10px);
+  transition: all 0.4s ease;
+  box-shadow: -1px 20px 50px rgba(0, 0, 0, 0.15);
 }
 
 .article-details {
-	margin-top: 6px;
+  display: block;
 }
 
-.article-title {
-	font-size: 1.2rem;
-	color: #333;
-	margin: 6px 0 2px;
+.article-details .article-title {
+  display: inline-block;
+  margin-bottom: 14px;
+  overflow: hidden;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #333d4b;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  -webkit-line-clamp: 2;
 }
 
-.article-date {
-	font-size: 0.8rem;
-	color: #666;
-	margin-bottom: 2px;
+.article-details .article-summary {
+  display: block;
+  margin: 0;
+  margin-bottom: 12px;
+  line-height: 1.6;
+  color: #4e5968;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  font-weight: 600;
+  font-size: 17px;
+  padding: 0;
 }
 
-.article-summary {
-	font-size: 0.9rem;
-	color: #444;
+.article-details .article-date {
+  display: block;
+  margin: 0;
+  margin-bottom: 12px;
+  line-height: 1.6;
+  color: gray;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  font-weight: 500;
+  font-size: 17px;
+  padding: 0;
 }
