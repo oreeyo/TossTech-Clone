@@ -1,54 +1,77 @@
-header {
-	background-color: #fff;
-	padding: 10px 0;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+#header {
+  top: 0;
+  position: sticky;
+  z-index: 99999;
+  background-color: #fff;
+  height: 40px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 27, 55, 0.1);
 }
 
 .container {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin: 0 auto;
-	padding: 0 20px;
-	max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1200px;
 }
 
 .logo img {
-	height: 40px;
+  height: 35px;
 }
 
 .logo span {
-	color: #0077ff;
-	font-size: 1.5rem;
-	font-weight: bold;
-	margin-left: 10px;
+  color: #0077ff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navigation a {
-	color: #333;
-	text-decoration: none;
-	margin: 0 10px;
-	font-size: 1rem;
+  padding: 0px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  color: gray;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+  text-decoration: none;
+  text-align: left;
+}
+
+.navigation a:hover {
+  padding: 5px;
+  background-color: rgba(229, 232, 235, 0.4);
 }
 
 .navigation a:last-child {
-	background-color: #0077ff;
-	color: #fff;
-	padding: 10px 20px;
-	border-radius: 20px;
+  background-color: #247fe7ec;
+  color: #fffffff0;
+  font-weight: bold;
+  padding: 7px 18px;
+  border-radius: 7px;
 }
 
 /* 반응형 디자인을 위한 미디어 쿼리 */
 @media (max-width: 768px) {
-	.container {
-		flex-direction: column;
-	}
+  .container {
+    flex-direction: column;
+  }
 
-	.navigation a {
-		margin: 5px 0;
-	}
+  .navigation a {
+    margin: 5px 0;
+  }
 
-	.navigation a:last-child {
-		margin-top: 10px;
-	}
+  .navigation a:last-child {
+    margin-top: 10px;
+  }
 }
